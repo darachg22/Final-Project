@@ -1,23 +1,22 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Welcome to the Sligo Surf Report Web App"
+    return render_template("index.html")
 
 @app.route('/about')
 def about():
-    return 'This is the a web application that shows the surf report for the Sligo area.'
+    return render_template("about.html")
 
-@app.route('/Surf Decider')
+@app.route('/contact')
 def contact():
-    return 'Contact us for more information.'
+    return render_template("contact.html")
 
-@app.route('/Current Surfing Statistics')
-def contact():
-    return 'Contact us for more information.'
-
+@app.route('/statistics')
+def statistics():
+    return render_template("statistics.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
