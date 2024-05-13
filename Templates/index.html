@@ -1,22 +1,37 @@
-<html>
-<head>
-    <title>Welcome</title>
-</head>
-<body>
-    <h1>Welcome to the Sligo Surf Report Web App</h1>
-    <!DOCTYPE html>
-<html>
-<head>
-    <title>Forecast</title>
-</head>
-<body>
-    <h1>Forecast Data</h1>
-    <pre>{{ forecast }}</pre>
-</body>
-</html>
 
-    <a href="/about">About</a><br>
-    <a href="/contact">Contact</a><br>
-    <a href="/statistics">Statistics</a><br>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sligo Surf Report</title>
+</head>
+<body>
+    <h1>Sligo Surf Report</h1>
+    <table border="1">
+        
+        <tr>
+            <th>Region</th>
+            <td>{{ forecast['forecasts'][0]['regions'][0]['region'] }}</td>
+        </tr>
+        <tr>
+            <th>Issued</th>
+            <td>{{ forecast['forecasts'][0]['regions'][1]['issued'] }}</td>
+        </tr>
+        <tr>
+            <th>Today</th>
+            <td>{{ forecast['forecasts'][0]['regions'][2]['today'] }}</td>
+        </tr>
+        <tr>
+            <th>Tonight</th>
+            <td>{{ forecast['forecasts'][0]['regions'][3]['tonight'] }}</td>
+        </tr>
+        <tr>
+            <th>Tomorrow</th>
+            <td>{{ forecast['forecasts'][0]['regions'][4]['tomorrow'] }}</td>
+        </tr>
+        <tr>
+            <th>Outlook</th>
+            <td>{{ forecast['forecasts'][0]['regions'][5]['outlook'] }}</td>
+    </table>
+    <iframe src="//www.surf-forecast.com/breaks/Strandhill/forecasts/widget/a" width="600" height="400" frameborder="0"></iframe>
 </body>
 </html>
