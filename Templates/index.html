@@ -1,37 +1,29 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Sligo Surf Report</title>
+    <style>
+        body {
+            font-family: Chalkduster, fantasy;
+        }
+    </style>
 </head>
 <body>
     <h1>Sligo Surf Report</h1>
-    <table border="1">
-        
-        <tr>
-            <th>Region</th>
-            <td>{{ forecast['forecasts'][0]['regions'][0]['region'] }}</td>
-        </tr>
-        <tr>
-            <th>Issued</th>
-            <td>{{ forecast['forecasts'][0]['regions'][1]['issued'] }}</td>
-        </tr>
-        <tr>
-            <th>Today</th>
-            <td>{{ forecast['forecasts'][0]['regions'][2]['today'] }}</td>
-        </tr>
-        <tr>
-            <th>Tonight</th>
-            <td>{{ forecast['forecasts'][0]['regions'][3]['tonight'] }}</td>
-        </tr>
-        <tr>
-            <th>Tomorrow</th>
-            <td>{{ forecast['forecasts'][0]['regions'][4]['tomorrow'] }}</td>
-        </tr>
-        <tr>
-            <th>Outlook</th>
-            <td>{{ forecast['forecasts'][0]['regions'][5]['outlook'] }}</td>
-    </table>
-    <iframe src="//www.surf-forecast.com/breaks/Strandhill/forecasts/widget/a" width="600" height="400" frameborder="0"></iframe>
+
+
+
+    <p>Weather reports:</p>
+    <ul>
+        <li><a href="/NationalWeather">National Weather</a></li>
+        <li><a href="/SligoWeather">Sligo Weather</a></li>
+        <br>
+    <p>Surf reports:</p>
+
+        <li><a href="/SurfStrandhill">Surf Strandhill</a></li>
+        <li><a href="/SurfDunmoran">Surf Dunmoran</a></li>
+        <li><a href="/SurfEaskey">Surf Easkey</a></li>
+    </ul>
 </body>
 </html>
+

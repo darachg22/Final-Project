@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>National Weather Report</title>
+</head>
+<body>
+    <h1>National Weather Report</h1>
+    <table border="1">
+        
+        <tr>
+            <th>Region</th>
+            <td>{{ forecast['forecasts'][0]['regions'][0]['region'] }}</td>
+        </tr>
+        <tr>
+            <th>Issued</th>
+            <td>{{ forecast['forecasts'][0]['regions'][1]['issued'] }}</td>
+        </tr>
+        <tr>
+            <th>Today</th>
+            <td>{{ forecast['forecasts'][0]['regions'][2]['today'] }}</td>
+        </tr>
+        <tr>
+            <th>Tonight</th>
+            <td>{{ forecast['forecasts'][0]['regions'][3]['tonight'] }}</td>
+        </tr>
+        <tr>
+            <th>Tomorrow</th>
+            <td>{{ forecast['forecasts'][0]['regions'][4]['tomorrow'] }}</td>
+        </tr>
+        <tr>
+            <th>Outlook</th>
+            <td>{{ forecast['forecasts'][0]['regions'][5]['outlook'] }}</td>
+    </table>
+</body>
+<a href="/">Home</a>
+</html>
