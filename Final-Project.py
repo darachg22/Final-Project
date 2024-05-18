@@ -1,10 +1,10 @@
-from flask import Flask, render_template
-import requests 
+from flask import Flask, render_template, url_for
+import requests
 
 app = Flask(__name__)
 
-#Weather report for App
-def weather_forecast(): 
+# Weather report for App
+def weather_forecast():
     url = "https://www.met.ie/Open_Data/json/National.json"
     response = requests.get(url)
     data = response.json()
@@ -15,16 +15,16 @@ def index():
     return render_template("index.html")
 
 @app.route('/NationalWeather')
-def about():
+def national_weather():
     forecast = weather_forecast()
     return render_template("NationalWeather.html", forecast=forecast)
 
 @app.route('/SligoWeather')
-def contact():
+def sligo_weather():
     return render_template("SligoWeather.html")
 
 @app.route('/SurfStrandhill')
-def strandhill():
+def surf_strandhill():
     return render_template("SurfStrandhill.html")
 
 @app.route('/SurfDunmoran')
