@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Surf Report Easkey</title>
+    <title>Sligo Surf Report</title>
+    <style>
+        body {
+            font-family: Papyrus, fantasy;
+            font-size: 25px;
+        }
+        .container {
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        h1, p, li {
+            white-space: nowrap;
+        }
+        iframe {
+            display: block;
+            margin: 0 auto;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        a {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Surf Report Easkey</h1>
-    <iframe src="//www.surf-forecast.com/breaks/Easky-Right/forecasts/feed/a" width="600" height="400" frameborder="0"></iframe>
-    <br>
-    <br>
-    <a href="/">Home</a>
+    <div class="container">
+        <h1>Surf Report Easkey</h1>
+        <img src="{{ url_for('static', filename='Images/Surf3.jpg') }}" alt="Surf Image" width="200" height="200">
+        <br>
+        <iframe src="//www.surf-forecast.com/breaks/Easky-Right/forecasts/feed/a" width="600" height="400" frameborder="0"></iframe>
+        <a href="/">Home</a>
+    </div>
 </body>
 </html>
+

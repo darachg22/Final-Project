@@ -8,14 +8,20 @@
             font-size: 25px;
         }
         ul {
-            list-style-type: none; 
+            list-style-type: none;
+            padding: 0;
         }
         .container {
-            width: 20%;
+            width: 80%;
             margin: 0 auto;
+            text-align: center;
         }
         h1, p, li {
-            white-space: nowrap; 
+            white-space: nowrap;
+        }
+        iframe, img, button {
+            display: block;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -23,24 +29,22 @@
     <div class="container">
         <h1>Sligo Surf Report</h1>
         
-        <img src="{{ url_for('static', filename='Images/Surf1.jpg') }}" alt="Surf Image" width="300" height="300">
+        <img src="{{ url_for('static', filename='Images/Surf1.jpg') }}" alt="Surf Image" width="200" height="200">
 
         <p>Weather reports:</p>
         <ul>
             <li><a href="/NationalWeather">National Weather</a></li>
             <li><a href="/SligoWeather">Sligo Weather</a></li>
         </ul>
+        <p>Buoy Data:</p>
+            <ul>
+            <li><a href="/BuoyM4">Buoy M4</a></li>
         <p>Surf reports:</p>
         <ul>
             <li><a href="/SurfStrandhill">Surf Strandhill</a></li>
             <li><a href="/SurfDunmoran">Surf Dunmoran</a></li>
             <li><a href="/SurfEaskey">Surf Easkey</a></li>
         </ul>
-        
-        <button type="button">
-            <img src="{{ url_for('static', filename='Images/Widget1.png') }}" alt="Button Image" border="0" width="100" height="100"/>
-        </button>
-    
     </div>
 </body>
 </html>
