@@ -10,11 +10,11 @@ def weather_forecast():
     data = response.json()
     return data
 
-def wave_forecast_data():
-    url = "http://erddap.marine.ie/erddap/tabledap/IMI-WaveBuoyForecast.json?time,longitude,latitude,stationID,significant_wave_height,mean_wave_period,mean_wave_direction,wave_power_per_unit_crest_length,peak_period,energy_period&stationID=M4"
-    response = requests.get(url)
-    data = response.json()
-    return data
+def buoy_m4_data():
+    url = "http://erddap.marine.ie/erddap/tabledap/IMI-WaveBuoyForecast.csv?time,longitude,latitude,stationID,significant_wave_height,mean_wave_period,mean_wave_direction,wave_power_per_unit_crest_length,peak_period,energy_period"
+    df = pd.read_csv(url)
+    m4_data = df[df['stationID'] == 'M4']
+    return m4_data
 
 @app.route("/")
 def index():
@@ -41,10 +41,11 @@ def surf_dunmoran():
 def surf_easkey():
     return render_template("SurfEaskey.html")
 
-@app.route("/buoy_m4")
+@app.route('/BuoyM4')
 def buoy_m4():
-    wave_data = wave_forecast_data()
-    return render_template("buoy_m4.html", wave_data=wave_data)
+    buoy_data = buoy_m4_data()
+    html_table = buoy_data.to_html(classes='table table-striped', index=False)
+    return render_template('BuoyM4.html', table=html_table)
 
 if __name__ == '__main__':
     app.run(debug=True)

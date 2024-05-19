@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Buoy M4 Wave Data</title>
+    <title>Buoy M4 Data</title>
+    <style>
+        body {
+            font-family: Papyrus, fantasy;
+            margin: 40px;
+        }
+        .table-container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
-    <h1>Buoy M4 Wave Data</h1>
-    <table border="1">
-    
+    <div class="table-container">
+        <h1>Buoy M4 Data</h1>
+        {{ table|safe }}
+    </div>
+</body>
+</html>
+
 
