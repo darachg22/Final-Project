@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sligo Weather Report</title>
+    <title>Sligo Weather Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .table-container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+    
+    </style>
 </head>
 <body>
-    <h1>Sligo Weather Report</h1>
-    
-    <iframe width="700" height="400" src="https://data.gov.ie/dataset/met-eireann-live-text-forecast-data/resource/1627f9b4-4e6d-4107-a97e-6366fd5e629a/view/c41ee896-5fb0-406e-bde3-2fc63913119c" frameborder="0"></iframe>
-
+    <div class="table-container">
+        <h1>Sligo Weather Data</h1>
+        {{ table|safe }}
+    </div>
 </body>
 </html>
+

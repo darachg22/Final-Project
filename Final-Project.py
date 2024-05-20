@@ -10,6 +10,11 @@ def weather_forecast():
     data = response.json()
     return data
 
+def sligo_weather_data():
+    url = "https://www.met.ie/latest-reports/observations/download/markree-castle"
+    df = pd.read_csv(url)
+    return df
+
 def buoy_m4_data():
     url = "http://erddap.marine.ie/erddap/tabledap/IMI-WaveBuoyForecast.csv?time,longitude,latitude,stationID,significant_wave_height,mean_wave_period,mean_wave_direction,wave_power_per_unit_crest_length,peak_period,energy_period"
     df = pd.read_csv(url)
@@ -27,7 +32,9 @@ def national_weather():
 
 @app.route('/SligoWeather')
 def sligo_weather():
-    return render_template("SligoWeather.html")
+    weather_data = sligo_weather_data()
+    html_table = weather_data.to_html(classes='table table-striped', index=False)
+    return render_template('SligoWeather.html', table=html_table)
 
 @app.route('/SurfStrandhill')
 def surf_strandhill():
